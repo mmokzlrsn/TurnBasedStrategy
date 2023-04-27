@@ -282,6 +282,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 53900960}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &53900962 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95787105524477528, guid: 2f3e27eecb190e44a9af50723c394274,
+    type: 3}
+  m_PrefabInstance: {fileID: 53900960}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &239928008
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,6 +298,7 @@ GameObject:
   m_Component:
   - component: {fileID: 239928009}
   - component: {fileID: 239928010}
+  - component: {fileID: 239928011}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Untagged
@@ -327,6 +334,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00dff9061d1fb7644b944558567c39aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &239928011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239928008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cef63eb0d339f6646a247050a0b26727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 53900962}
+  currentState: 
 --- !u!1001 &272848047
 PrefabInstance:
   m_ObjectHideFlags: 0
