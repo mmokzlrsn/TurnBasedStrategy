@@ -5,7 +5,10 @@ public class Unit : MonoBehaviour
 {
     readonly float _unitMoveDuration = 1f;
     readonly Ease _unitMoveEase = Ease.Linear;
-     
+    readonly float _unitRotationDuration = 0.3f;
+
+    Sequence _sequence;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +26,10 @@ public class Unit : MonoBehaviour
 
     private void Move(Vector3 targetPosition)
     {
-        transform.DOMove(targetPosition, Vector3.Distance(transform.position, targetPosition) / 2f).SetEase(_unitMoveEase);
+        _sequence.Kill();
+        _sequence = DOTween.Sequence(); 
+        transform.DOLookAt(targetPosition, _unitRotationDuration);
+        _sequence.Append(transform.DOMove(targetPosition, Vector3.Distance(transform.position, targetPosition) / 5f).SetEase(_unitMoveEase));
     }
     
 }
