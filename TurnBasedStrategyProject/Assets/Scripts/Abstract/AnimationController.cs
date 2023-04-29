@@ -10,8 +10,8 @@ public abstract class AnimationController : MonoBehaviour
 
     public void ChangeAnimationState(string newState)
     {
-        //if (currentState == newState)
-        //    return;
+        if (currentState == newState)
+            return;
 
         if (animator == null) return;
         animator.Play(newState);
