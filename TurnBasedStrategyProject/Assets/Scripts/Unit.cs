@@ -14,7 +14,8 @@ public class Unit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GridPosition gridPosition = LevelGrid.instance.GetGridPosition(transform.position);
+        LevelGrid.instance.SetUnitAtGridPosition(gridPosition, this);
     }
 
     // Update is called once per frame
