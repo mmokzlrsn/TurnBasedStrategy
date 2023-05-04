@@ -11,10 +11,12 @@ public class Unit : MonoBehaviour
 
     [SerializeField] UnitAnimationController _unitAnimationController;
 
+    private GridPosition gridPosition;
+
     // Start is called before the first frame update
     void Start()
     {
-        GridPosition gridPosition = LevelGrid.instance.GetGridPosition(transform.position);
+        gridPosition = LevelGrid.instance.GetGridPosition(transform.position);
         LevelGrid.instance.SetUnitAtGridPosition(gridPosition, this);
     }
 
@@ -30,8 +32,19 @@ public class Unit : MonoBehaviour
         _sequence = DOTween.Sequence(); 
         transform.DOLookAt(targetPosition, _unitRotationDuration);
         _unitAnimationController.PlayRifleRunAnimation();
-        _sequence.Append(transform.DOMove(targetPosition, Vector3.Distance(transform.position, targetPosition) / 5f).SetEase(_unitMoveEase)).OnComplete(() =>
+        AudioManager.instance.PlaySound("StepGrass");
+
+        _sequence.Append(transform.DOMove(targetPosition, Vector3.Distance(transform.position, targetPosition) / 5f).SetEase(_unitMoveEase)).OnUpdate(()=>
+        { 
+            GridPosition newGridPosition = LevelGrid.instance.GetGridPosition(transform.position);
+            if(newGridPosition != gridPosition)
+            {
+                LevelGrid.instance.UnitMovedGridPosition(this, gridPosition, newGridPosition);
+                gridPosition = newGridPosition;
+            }
+        }).OnComplete(() =>
         {
+            AudioManager.instance.StopSound("StepGrass");
             _unitAnimationController.PlayRifleAimingIdleAnimation();
         });
     }
