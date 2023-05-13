@@ -877,7 +877,7 @@ PrefabInstance:
     - target: {fileID: 6558738627369987561, guid: 070dd040c35ded84b8c3308908495fef,
         type: 3}
       propertyPath: m_Name
-      value: Unit (1)
+      value: B.O.B.
       objectReference: {fileID: 0}
     - target: {fileID: 6558738627369987561, guid: 070dd040c35ded84b8c3308908495fef,
         type: 3}
@@ -1001,7 +1001,7 @@ PrefabInstance:
     - target: {fileID: 6558738627369987561, guid: 070dd040c35ded84b8c3308908495fef,
         type: 3}
       propertyPath: m_Name
-      value: Unit (3)
+      value: FRED
       objectReference: {fileID: 0}
     - target: {fileID: 6558738627369987561, guid: 070dd040c35ded84b8c3308908495fef,
         type: 3}
@@ -1171,7 +1171,7 @@ PrefabInstance:
     - target: {fileID: 6558738627369987561, guid: 070dd040c35ded84b8c3308908495fef,
         type: 3}
       propertyPath: m_Name
-      value: Unit
+      value: Ashe
       objectReference: {fileID: 0}
     - target: {fileID: 6558738627369987561, guid: 070dd040c35ded84b8c3308908495fef,
         type: 3}
